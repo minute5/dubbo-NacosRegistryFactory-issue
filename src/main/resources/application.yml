@@ -1,0 +1,28 @@
+
+nacos.config.server-addr : localhost:8848
+provider:
+  service:
+    version: 1.0.0
+dubbo:
+  application:
+    name: test-service
+  registry:
+    address: nacos://localhost:8848
+    timeout: 10000
+    parameters.namespace : testtset
+  metadata-report:
+    address: nacos://localhost:8848
+  protocol:
+    name: dubbo
+    port: 18888
+  version: 1.0.0
+  scan:
+    base-packages: com.lzw.*
+  consumer:
+    timeout: 10000
+    check: false
+spring:
+  application:
+    name: test-service
+server:
+  port: 8888
