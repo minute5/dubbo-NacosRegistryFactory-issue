@@ -1,8 +1,6 @@
 package com.lzw.service.Impl;
 
-import com.lzw.service.LocalService;
-import com.lzw.service.Test2Service;
-import com.lzw.service.TestService;
+import com.lzw.service.*;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +12,18 @@ import org.springframework.stereotype.Service;
 public class Local2ServiceImpl implements LocalService {
 
     @DubboReference
-    private Test2Service testService;
+    private Test2Service test2Service;
+
+    @DubboReference
+    private Test4Service test4Service;
+
+    @DubboReference
+    private Test5Service test5Service;
 
     public void someMethod(String param) {
-        testService.test("xx");
+        test2Service.test("xx");
+        test4Service.test("xx");
+        test5Service.test("xx");
         // code here
     }
 }
