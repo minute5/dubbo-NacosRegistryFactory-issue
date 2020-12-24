@@ -39,7 +39,7 @@ public class NacosRegistryFactory extends AbstractRegistryFactory {
         if (StringUtils.isNotEmpty(namespace)) {
             url = url.addParameter(CONFIG_NAMESPACE_KEY, namespace);
         }
-        url.addParameter(TIMESTAMP_KEY, System.currentTimeMillis());
+        // url.addParameter(TIMESTAMP_KEY, System.currentTimeMillis());
         return url.toFullString();
     }
 
